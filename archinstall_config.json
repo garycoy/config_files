@@ -38,7 +38,8 @@
         "xorg-xrandr",
         "zsh",
         "man",
-        "ykman"
+        "ykman",
+        "cronie"
     ],
     "parallel downloads": 0,
     "profile_config": {
