@@ -25,3 +25,4 @@ chown user1:user1 /home/user1
 ln -s /user1_config/.config ~/.config
 ln -s /user1_config/.zshrc ~/.zshrc
 ln -s /user1_config/.oh-my-zsh ~/.oh-my-zsh
+ln -s /user1_config/.Xauthority ~/.Xauthority
