@@ -35,7 +35,9 @@
         "gnupg",
         "base-devel",
         "git",
-        "xorg-xrandr"
+        "xorg-xrandr",
+        "zsh",
+        "man"
     ],
     "parallel downloads": 0,
     "profile_config": {
