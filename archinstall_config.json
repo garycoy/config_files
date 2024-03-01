@@ -39,7 +39,8 @@
         "zsh",
         "man",
         "ykman",
-        "cronie"
+        "cronie",
+        "ntp"
     ],
     "parallel downloads": 0,
     "profile_config": {
