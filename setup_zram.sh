@@ -21,5 +21,7 @@ zramctl /dev/zram1 --algorithm zstd --size 2G
 
 mkfs.ext4 /dev/zram1
 
+cp -p /home/user1/.Xauthority /user1/config/.Xauthority
+
 mount /dev/zram1 /home/user1
 chown user1:user1 /home/user1
