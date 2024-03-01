@@ -32,7 +32,10 @@
         "python",
         "flameshot",
         "pavucontrol",
-        "gnupg"
+        "gnupg",
+        "base-devel",
+        "git",
+        "xorg-xrandr"
     ],
     "parallel downloads": 0,
     "profile_config": {
