@@ -22,4 +22,4 @@ mkfs.ext4 /dev/zram1
 mount /dev/zram1 /home/user1
 chown user1:user1 /home/user1
 
-ln -s /user1_config ~/.config
+ln -s /user1_config/.config ~/.config
