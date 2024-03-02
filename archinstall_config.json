@@ -38,7 +38,7 @@
         "xorg-xrandr",
         "zsh",
         "man",
-        "ykman",
+        "yubikey-manager",
         "cronie",
         "ntp"
     ],
