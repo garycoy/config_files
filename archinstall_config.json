@@ -40,7 +40,10 @@
         "man",
         "yubikey-manager",
         "cronie",
-        "ntp"
+        "ntp",
+        "ranger",
+        "ueberzug",
+        "w3m"
     ],
     "parallel downloads": 0,
     "profile_config": {
