@@ -39,8 +39,10 @@ keys = [
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
     # Switch between windows
-    Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
-    Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
+    #Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
+    #Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
+    Key([mod], "h", lazy.layout.client_to_previous(), desc="Move focus to left"),
+    Key([mod], "l", lazy.layout.client_to_next(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
@@ -73,7 +75,7 @@ keys = [
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawn("rofi -monitor -1 -theme /home/spewyrabbit/.config/rofi/slate.rasi -show combi"), desc="run rofi"),
+    Key([mod], "r", lazy.spawn("rofi -monitor -1 -theme /home/user1/.config/rofi/slate.rasi -show combi"), desc="run rofi"),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -103,15 +105,15 @@ for i in groups:
     )
 
 layouts = [
-    # layout.Columns(
-    #     border_focus=["#4da6ff"],
+    #layout.Columns(
+    #    border_focus=["#4da6ff"],
     #     border_width=1,
-    #     margin=5
+    #     margin=2
     # ),
     # layout.Bsp(
     #      border_focus=["#4da6ff"],
     #     border_width=1,
-    #     margin=5
+    #     margin=2
     # ),
     # Try more layouts by unleashing below layouts.
     layout.Stack(
@@ -121,20 +123,21 @@ layouts = [
         margin=5
         ),
     layout.Stack(
-        num_stacks=1,
+        num_stacks=3,
         margin=4,
         border_width=0
         ),
     # layout.Max()
+    # layout.Matrix()
     # layout.Bsp(),
-    # layout.Matrix(),
+    # layout.ScreenSplit(),
     # layout.MonadTall(),
     # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
-    # layout.Zoomy(),
+    #layout.Zoomy(),
 ]
 
 widget_defaults = dict(
