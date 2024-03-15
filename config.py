@@ -41,15 +41,15 @@ keys = [
     # Switch between windows
     #Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     #Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
-    Key([mod], "h", lazy.layout.client_to_previous(), desc="Move focus to left"),
-    Key([mod], "l", lazy.layout.client_to_next(), desc="Move focus to right"),
+    Key([mod], "h", lazy.layout.previous(), desc="Move focus to left"),
+    Key([mod], "l", lazy.layout.next(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
-    Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
+    Key([mod, "shift"], "h", lazy.layout.client_to_previous(), desc="Move window to the left"),
+    Key([mod, "shift"], "l", lazy.layout.client_to_next(), desc="Move window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
     # Grow windows. If current window is on the edge of screen and direction
@@ -119,13 +119,14 @@ layouts = [
     layout.Stack(
         num_stacks=2,
         border_focus=["#4da6ff"],
-        border_width=3,
-        margin=5
+        border_width=5,
+        margin=3
         ),
     layout.Stack(
         num_stacks=3,
-        margin=4,
-        border_width=0
+        border_focus=["#4da6ff"],
+        border_width=5,
+        margin=3
         ),
     # layout.Max()
     # layout.Matrix()
@@ -158,6 +159,11 @@ screens = [
                 widget.GroupBox(),
                 widget.Prompt(),
                 widget.TaskList(),
+                widget.Sep(padding=30),
+                widget.Systray(),
+                widget.BatteryIcon(),
+                widget.Sep(padding=30),
+                widget.Clock(format="%Y-%m-%d %a %I:%M %p",fontsize="16"),
             ],
             36,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
